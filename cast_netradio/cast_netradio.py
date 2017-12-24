@@ -25,7 +25,7 @@ class NetRadioCast(object):
 
     def __init__(self):
         subprocess.Popen(['python', '-m', 'http.server'])
-        self._cast = pychromecast.Chromecast(param.chromecast_ip)
+        self._cast = pychromecast.Chromecast(param.chromecast_host)
 
     def run(self):
         checker = self._check_update()
@@ -47,9 +47,10 @@ class NetRadioCast(object):
 
             downloader = cl(url)
             downloader.download()
-            file_path = 'http://{server_ip}:8000/'.format(**globals())
+            file_path = 'http://{param.server_host}:8000/'.format(**globals())
             file_path += '{downloader.file_path}'.format(**locals())
             print('Start to play media')
+            print(file_path)
             self._cast.media_controller.play_media(
                 file_path, downloader.content_type)
 
