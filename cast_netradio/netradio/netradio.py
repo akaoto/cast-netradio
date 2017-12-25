@@ -107,5 +107,5 @@ class Hibiki(NetRadio):
         popen = subprocess.Popen(['ffmpeg', '-i', playlist_url,
                                   '-vcodec', 'copy', '-acodec', 'copy',
                                   '-bsf:a', 'aac_adtstoasc', fname,
-                                  '-y'])
+                                  '-y']) 
         popen.wait()
