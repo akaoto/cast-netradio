@@ -1,5 +1,5 @@
 server_ip = '192.168.0.10'
-server_port = 8080
+server_port = '8080'
 server_cmd = 'python', '-m', 'http.server', server_port
 
 bbt_hostname = 'api.beebotte.com'
