@@ -4,6 +4,8 @@ import requests
 import re
 import mimetypes
 
+mimetypes.add_type('audio/vnd.dlna.adts', '.aac')
+
 smart_phone_user_agent = 'Mozilla/5.0 (Linux; U; Android 2.2.1; en-us; '
 smart_phone_user_agent += 'Nexus One Build/FRG83) AppleWebKit/533.1 '
 smart_phone_user_agent += '(KHTML, like Gecko) Version/4.0 Mobile Safari/533.1'
