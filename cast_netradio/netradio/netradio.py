@@ -104,8 +104,6 @@ class Hibiki(NetRadio):
 
     def download_method(self, fname):
         playlist_url = self.get_playlist_url(self._video_id)
-        popen = subprocess.Popen(['ffmpeg', '-i', playlist_url,
-                                  '-vcodec', 'copy', '-acodec', 'copy',
-                                  '-bsf:a', 'aac_adtstoasc', fname,
-                                  '-y']) 
+        popen = subprocess.Popen(
+            ['ffmpeg', '-i', playlist_url, '-c', 'copy', fname, '-y'])
         popen.wait()
